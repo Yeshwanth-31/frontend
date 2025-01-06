@@ -10,7 +10,7 @@ const CreateUser=()=>{
     
     const submit=(e)=>{
         e.preventDefault();
-        axios.post('https://backenddemo-1-98l1.onrender.com/api/user/create',{name,email,address})
+        axios.post('https://backenddemo-2-bcah.onrender.com/api/user/create',{name,email,address})
         .then(result=>{
             console.log(result.data);
           
