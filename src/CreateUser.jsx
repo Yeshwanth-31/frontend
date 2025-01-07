@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import './create.css'
 const CreateUser=()=>{
     
     const[name,setName]=useState();
@@ -18,18 +19,23 @@ const CreateUser=()=>{
         .catch(err=>{console.log(err)})
     }
     return(
-        <div className="x">
-          <form onSubmit={submit}>
-            <h1>create</h1>
-            <label>Name:</label>
-        <input type="text"  onChange={(e)=>setName(e.target.value)}/>
-        <label>Email</label>
-        <input type="text" onChange={(e)=>setemail(e.target.value)} />
-        <label>Address:</label>
-        <input type="text" onChange={(e)=>setaddress(e.target.value)}/>
-        <button type="submit" style={{backgroundColor:"green",color:"white"}}>Create</button>
-       </form>
-       </div>
+        <div className="create-form">
+        <div>
+            <h1>Create User</h1>
+        </div>
+        <form onSubmit={submit}>
+            <label htmlFor="name">name</label>
+            <input type="text" id="name" onChange={(e) => setName(e.target.value)}/><br />
+
+            <label htmlFor="email">email</label>
+            <input type="text" id="email" onChange={(e) => setEmail(e.target.value)}/> <br />
+
+            <label htmlFor="address">address</label>
+            <input type="text" id="address" onChange={(e) => setAddress(e.target.value)}/> <br />
+
+            <button type="submit">Create</button>
+        </form>
+    </div>
     )
 }
 export default CreateUser

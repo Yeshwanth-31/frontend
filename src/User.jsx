@@ -2,6 +2,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"
+import './table.css'
 const User = () => {
     const [user, setUser] = useState([ ])
 
@@ -24,9 +25,9 @@ const User = () => {
     }
     
     return(
-        <div>
-            <h1>User</h1>
-            <Link to="/create">Create user</Link>
+        <div className="tablecont">
+            <h1>USER DETAILS</h1>
+           <Link to="/create"className="cr">Create user</Link>
             <table>
                 <tr>
                     <th>Name</th>
@@ -41,8 +42,8 @@ const User = () => {
                             <td>{users.email}</td>
                             <td>{users.address}</td>
                             <td>
-                                <Link to={`/update/${users._id}`}>update</Link>
-                                <button onClick={(e) => handleDelete(users._id)}>delete</button>
+                               <button ><Link to={`/update/${users._id}`} className="up">update</Link></button>
+                                <button className="delbut" onClick={(e) => handleDelete(users._id)}>delete</button>
                             </td>
                         </tr>
                     ))
